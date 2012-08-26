@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{865F385E-4451-451F-BD3B-7C94465CD6D7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>Aliyun.OpenServices</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Authentication\ServiceSignature.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Authentication\HmacSHA1Signature.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Authentication\IRequestSigner.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\ExecutionContext.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\HttpMethod.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\IServiceClient.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\RetryableServiceClient.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\AsyncResult.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\AsyncResult!1.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\RetryableAsyncResult.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\ServiceClient.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\ServiceClientImpl.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\ServiceMessage.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\ServiceResponse.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\HttpFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\HttpExtensions.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Communication\ServiceRequest.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Handlers\IResponseHandler.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Handlers\ResponseHandler.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Transform\IDeserializer!2.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Transform\ResponseDeserializationException.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Transform\XmlStreamDeserializer!1.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Utilities\DateUtils.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Utilities\EnumUtils.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Utilities\HttpHeaders.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Utilities\HttpUtils.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Utilities\IOUtils.cs" />
+    <Compile Include="Aliyun\OpenServices\Common\Utilities\StringValueAttribute.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\OssCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\CreateBucketCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\DeleteBucketCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\DeleteObjectCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\OssCommand!1.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\GetBucketAclCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\GetObjectCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\GetObjectMetadataCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\ListBucketsCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\ListObjectsCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\PutObjectCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Commands\SetBucketAclCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\AccessControlPolicy.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\ErrorResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\ListAllMyBucketsResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\BucketModel.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\ListBucketResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\ListBucketResultContents.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Model\ListBucketResultCommonPrefixes.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\DeserializerFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\XmlDeserializerFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\ResponseDeserializer!2.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\GetAclResponseParser.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\GetObjectMetadataResponseDeserializer.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\GetObjectResponseDeserializer.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\ListBucketResultDeserializer.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\ListObjectsResponseDeserializer.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\PutObjectResponseDeserializer.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Transform\SimpleResponseDeserializer!1.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\ErrorResponseHandler.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\ExceptionFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\ExecutionContextBuilder.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\OssHeaders.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\OssRequestSigner.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\OssUtils.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\ServiceClientFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Utilities\SignUtils.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\AccessControlList.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Bucket.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\CannedAccessControlList.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\GetObjectRequest.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Grant.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\IGrantee.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\GroupGrantee.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\ListObjectsRequest.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\ObjectListing.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\ObjectMetadata.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\OssClient.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\OssErrorCode.cs" />
+    <Compile Include="Aliyun\OpenServices\ServiceException.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\OssException.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\OssObject.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\OssObjectSummary.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\OssResources.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Owner.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\Permission.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\PutObjectResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenStorageService\ResponseHeaderOverrides.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\OtsCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\AbortTransactionCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\BatchModifyDataCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\CommitTransactionCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\CreateTableCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\CreateTableGroupCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\DeleteDataCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\DeleteTableCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\DeleteTableGroupCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\OtsCommand!1.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\GetRowCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\GetRowsByOffsetCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\GetRowsByRangeCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\GetTableMetaCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\ListTableCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\ListTableGroupCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\PutDataCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Commands\StartTransactionCommand.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\OpenTableServiceResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\AbortTransactionResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\BatchModifyDataResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\CommitTransactionResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\CreateTableGroupResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\CreateTableResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\DeleteDataResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\DeleteTableGroupResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\DeleteTableResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\ErrorResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\GetRowResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\GetRowsByRangeResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\GetRowsByOffsetResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\SqlQueryResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\InternalTableRow.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\InternalTableColumn.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\InternalTableColumnValue.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\GetTableMetaResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\InternalTableMeta.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\InternalViewMeta.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\PrimaryKey.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\ViewColumn.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\ListTableGroupResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\ListTableResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\PutDataResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Model\StartTransactionResult.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\DeserializerFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\EntityDictionary!1.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\PrimaryKeyDictionary.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\EntityNameList.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\EnumTypeStringMap!1.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\PartitionKeyTypeHelper.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\PrimaryKeyTypeHelper.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\ColumnTypeHelper.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\ExceptionFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\OtsConstants.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\OtsExceptionHandler.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\OtsRequestSigner.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\OtsUtility.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\ServiceClientFactory.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\TableValueExtension.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Utilities\ValidationResponseHandler.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\CheckingMode.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\ColumnType.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\ColumnValue.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\RowQueryCriteria.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\OffsetRowQueryCriteria.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\OtsClient.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\OtsErrorCode.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\OtsException.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\OtsExceptions.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\PartitionKeyType.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\PartitionKeyValue.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\PrimaryKeyRange.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\PrimaryKeyType.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\PrimaryKeyValue.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\RangeRowQueryCriteria.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\Row.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\RowChange.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\RowDeleteChange.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\RowPutChange.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\SingleRowQueryCriteria.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\TableMeta.cs" />
+    <Compile Include="Aliyun\OpenServices\OpenTableService\ViewMeta.cs" />
+    <Compile Include="Aliyun\OpenServices\Properties\Resources.cs" />
+    <Compile Include="Aliyun\OpenServices\ClientConfiguration.cs" />
+    <Compile Include="Aliyun\OpenServices\ServiceCredentials.cs" />
+    <EmbeddedResource Include="Aliyun.OpenServices.OpenStorageService.OssResources.resources" />
+    <EmbeddedResource Include="Aliyun.OpenServices.OpenTableService.OtsExceptions.resources" />
+    <EmbeddedResource Include="Aliyun.OpenServices.Properties.Resources.resources" />
+  </ItemGroup>
+</Project>

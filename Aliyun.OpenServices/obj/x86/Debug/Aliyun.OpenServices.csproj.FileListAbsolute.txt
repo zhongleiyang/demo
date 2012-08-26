@@ -1,0 +1,5 @@
+E:\aliyun\Aliyun.OpenServices\obj\x86\Debug\Aliyun.OpenServices.csprojResolveAssemblyReference.cache
+E:\aliyun\Aliyun.OpenServices\bin\Debug\Aliyun.OpenServices.dll
+E:\aliyun\Aliyun.OpenServices\bin\Debug\Aliyun.OpenServices.pdb
+E:\aliyun\Aliyun.OpenServices\obj\x86\Debug\Aliyun.OpenServices.dll
+E:\aliyun\Aliyun.OpenServices\obj\x86\Debug\Aliyun.OpenServices.pdb
