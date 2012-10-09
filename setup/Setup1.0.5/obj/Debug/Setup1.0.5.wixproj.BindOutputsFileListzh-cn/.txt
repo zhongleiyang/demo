@@ -1,0 +1,2 @@
+C:\Users\yangzhl\Desktop\setup\Setup1.0.5\bin\Debug\zh-cn\SonkwoSetup.msi
+C:\Users\yangzhl\Desktop\setup\Setup1.0.5\bin\Debug\zh-cn\SonkwoSetup.wixpdb

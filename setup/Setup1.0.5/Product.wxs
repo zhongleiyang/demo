@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" 
+     xmlns:complus="http://schemas.microsoft.com/wix/ComPlusExtension">
+  <?define myPath = "1.0.0.0" ?>
+  <?define UIENABLE = "true"?>
+  <Product Id="{7DE4FE48-CAD5-4EB0-AE7A-AE925D021341}" Name="OssMetro网盘 $(var.myPath)" Language="2052" Version="$(var.myPath)" Manufacturer="Zhonglei Yang" UpgradeCode="{D8531AAA-28FE-4BD4-AA26-32FD86A31ADA}">
+    <Package InstallerVersion="301" Compressed="yes" />
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+
+    <Property Id="INSTALLDESKTOPSHORTCUT" Value="1" />
+    <Property Id="SHORTCUT" Value="1" />
+    <Property Id="LAUNCHAPPONEXIT" Value="1" />
+    
+
+    <Property Id="INSTALLDIR">
+      <RegistrySearch Id='OssMetroRegistry' Type='raw'
+        Root='HKCR' Key='OssMetro' Name='dir' />
+    </Property>
+    
+
+    <Property Id="ALLUSERS" Value="1" />
+    <Directory Id="TARGETDIR"
+               Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+          <Directory Id="INSTALLDIR"
+                     Name="OssMetro">
+              <Component Id="CMP_test"
+              Guid="{FF553FA3-EFB6-4C34-AD51-DD82251E2B5D}">
+                <CreateFolder>
+                  <Permission User="Everyone" GenericAll="yes" />
+                </CreateFolder>
+              </Component>
+          </Directory>
+       
+          <Directory Id="ProgramMenuFolder">
+            <Directory Id="MyShortcutsDir"
+                        Name="OssMetro网盘"/>
+          </Directory>
+
+          <Directory Id="DesktopFolder" Name="Desktop" />
+   
+      </Directory>
+    </Directory>
+
+
+
+ 
+    <DirectoryRef Id="DesktopFolder">
+
+      <Component Id="CMP_DesktopShortcut"
+                 Guid="{43090D1C-2EB8-4312-98F8-896A3D190942}">
+        
+        <Condition>INSTALLDESKTOPSHORTCUT</Condition>
+
+        <Shortcut Id="MyDesktopShortcut" Name="OssMetro网盘"
+                      Description="OssMetro网盘"
+                  Directory="DesktopFolder"
+                      Target="[INSTALLDIR]OssClientMetro.exe" 
+                      WorkingDirectory="INSTALLDIR"/>
+
+        <RegistryValue Root="HKCU"
+              Key="OssMetro"
+              Name="dir"
+              Type="string"
+              Value="[INSTALLDIR]OssClientMetro.exe"
+              KeyPath="yes" />
+
+
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="MyShortcutsDir">
+      <Component Id="CMP_DocumentationShortcut"
+                 Guid="{AD1DB879-1CBF-45B9-B208-DFD1FA2A9C24}">
+
+        <Condition>SHORTCUT</Condition>
+        <Shortcut Id="DocumentationStartMenuShortcut"
+                  Name="OssMetro网盘"
+                  Description="OssMetro网盘"
+                  Target="[INSTALLDIR]OssClientMetro.exe"
+                  WorkingDirectory="INSTALLDIR"/>
+        <Shortcut Id="UninstallShortcut"
+                  Name="卸载OssMetro网盘"
+                  Description="卸载OssMetro网盘"
+                  Target="[System64Folder]msiexec.exe"
+                  Arguments="/x [ProductCode]" />
+        <RemoveFolder Id="RemoveMyShortcutsDir"
+                      On="uninstall" />
+        <RegistryValue Root="HKCU"
+               Key="OssMetro"
+               Name="dir2"
+               Type="string"
+               Value="[INSTALLDIR]"
+               KeyPath="yes" />
+
+
+      </Component>
+    </DirectoryRef>
+ 
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="CMP_OssClientMetro"
+                 Guid="{F0F02C14-33DE-4ECF-AE69-E8F6CA56FAFC}">
+        <File Id="FILE_OssClientMetro"
+             Source="$(var.myPath)\OssClientMetro.exe"
+             KeyPath="yes" >
+        </File>
+
+
+      </Component>
+      <Component Id="CMP_Caliburndll"
+           Guid="{CF22DD09-EEB8-4453-982F-CA0B8F13808F}">
+        <File Id="FILE_Caliburndll"
+             Source="$(var.myPath)\Caliburn.Micro.dll"
+             KeyPath="yes" />
+      </Component>
+      <Component Id="CMP_MahApps.Metro.dll"
+     Guid="{26D985A2-146E-4DE7-BA72-222663A42569}">
+        <File Id="FILE_IMahApps.Metro.dll"
+             Source="$(var.myPath)\MahApps.Metro.dll"
+             KeyPath="yes" />
+      </Component>
+      <Component Id="CMP_Oss.dll"
+     Guid="{051ED6D6-9B9B-4923-ACE7-30EE936A0B75}">
+        <File Id="FILE_Oss.dll"
+             Source="$(var.myPath)\Oss.dll"
+             KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_MahApps.Metro.Resources.dll"
+     Guid="{DA486F1D-1385-43A4-A66A-21C07CC35E2B}">
+        <File Id="FILE_MahApps.Metro.Resources.dll"
+             Source="$(var.myPath)\MahApps.Metro.Resources.dll"
+             KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_System.Net.Http.Formatting.dll"
+     Guid="{CCF5735F-563D-4FF1-BCDD-9113758A3494}">
+        <File Id="FILE_MSystem.Net.Http.Formatting.dll"
+             Source="$(var.myPath)\System.Net.Http.Formatting.dll"
+             KeyPath="yes" />
+      </Component>
+
+      <Component Id="CMP_System.Windows.Interactivity.dll"
+     Guid="{D77EAC03-ABBB-42B5-8A2A-AFA93E75753A}">
+        <File Id="FILE_System.Windows.Interactivity.dll"
+             Source="$(var.myPath)\System.Windows.Interactivity.dll"
+             KeyPath="yes" />
+      </Component>
+      
+    </DirectoryRef>
+
+    <!--Features-->
+    <Feature Id="ProductFeature" Title="Main Product"
+ Level="1">
+
+      <ComponentRef Id="CMP_test"/>
+      <ComponentRef Id="CMP_DesktopShortcut"/>
+      <ComponentRef Id="CMP_DocumentationShortcut"/>
+      
+      <ComponentRef Id="CMP_OssClientMetro"/>
+      <ComponentRef Id="CMP_Caliburndll" />
+      
+      <ComponentRef Id="CMP_MahApps.Metro.dll"/>      
+      <ComponentRef Id="CMP_Oss.dll" />
+      <ComponentRef Id="CMP_System.Net.Http.Formatting.dll"/>
+      <ComponentRef Id="CMP_MahApps.Metro.Resources.dll"/>
+      <ComponentRef Id="CMP_System.Windows.Interactivity.dll" />
+
+    </Feature>
+
+
+    <?if $(var.UIENABLE) = "true"?>
+ 
+    <Property Id="WIXUI_INSTALLDIR"
+      Value="INSTALLDIR" />
+
+    <UIRef Id="MyWixUI_InstallDir"/>
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <WixVariable Id="WixUILicenseRtf"
+    Value="用户协议.rtf" />
+ 
+    <CustomAction Id="LaunchApplication"  Directory='INSTALLDIR' ExeCommand="[INSTALLDIR]OssClientMetro.exe" Execute="immediate" Impersonate="yes" Return="asyncNoWait" />
+    <UI>
+      <Publish Dialog="MyExitDialog" Control="Finish" Order="1" Event="DoAction" Value="LaunchApplication">LAUNCHAPPONEXIT</Publish>
+    </UI>
+    <?endif?>
+
+
+  </Product>
+
+
+</Wix>

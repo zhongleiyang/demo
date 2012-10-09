@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Directory Id="dirD80A8455BD1EBB5CAEC465F502FFDF7E" Name="Setup1.0.5" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirD80A8455BD1EBB5CAEC465F502FFDF7E">
+            <Component Id="cmp12E8DF572081FFC3ACFA3106EB735C76" Guid="PUT-GUID-HERE">
+                <Class Id="{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}" Context="InprocServer32" Description="WindowsFormsControlLibrary1.UserControl1" ThreadingModel="both" ForeignServer="mscoree.dll">
+                    <ProgId Id="SonguoActiveX.InstallCheck" Description="WindowsFormsControlLibrary1.UserControl1" />
+                </Class>
+                <File Id="fil0F1E38168CAD2122DFC3084D0441FCBE" KeyPath="yes" Source="SourceDir\Setup1.0.5\SonguoActiveX.dll" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32\1.0.0.0" Name="Class" Value="WindowsFormsControlLibrary1.UserControl1" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32\1.0.0.0" Name="Assembly" Value="WindowsFormsControlLibrary1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#fil0F1E38168CAD2122DFC3084D0441FCBE]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32" Name="Class" Value="WindowsFormsControlLibrary1.UserControl1" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32" Name="Assembly" Value="WindowsFormsControlLibrary1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{FDABEE29-B23E-4D4D-909E-68F9C719CBE5}\InprocServer32" Name="CodeBase" Value="file:///[#fil0F1E38168CAD2122DFC3084D0441FCBE]" Type="string" Action="write" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

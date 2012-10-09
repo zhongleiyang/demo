@@ -1,0 +1,10 @@
+obj\Debug\MyExitDialog.wixobj
+obj\Debug\MyInstallDirDlg.wixobj
+obj\Debug\MyVerifyReadyDlg.wixobj
+obj\Debug\MyWixUI_InstallDir.wixobj
+obj\Debug\Product.wixobj
+C:\Users\yangzhl\Desktop\setup\Setup1.0.5\bin\Debug\zh-cn\SonkwoSetup.msi
+C:\Users\yangzhl\Desktop\setup\Setup1.0.5\bin\Debug\zh-cn\SonkwoSetup.wixpdb
+obj\Debug\Setup1.0.5.wixproj.BindContentsFileListzh-cn\.txt
+obj\Debug\Setup1.0.5.wixproj.BindOutputsFileListzh-cn\.txt
+obj\Debug\Setup1.0.5.wixproj.BindBuiltOutputsFileListzh-cn\.txt
